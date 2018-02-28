@@ -21,7 +21,7 @@
       // 사용자 숫자 입력
       function userNumber(){
         var input = prompt('숫자를 입력해주세요 ex)123 ');
-        var user = input.split('');
+        var user = [input.split('')];
         return user;
       }
       //console.log(userNumber());
@@ -64,6 +64,7 @@
 
       var s = strike ();
       var b = ball ();
+      var u = userNumber();
 
       while (s < 3 ){
         console.log('숫자를 입력해주세요 ex)123');
@@ -77,7 +78,7 @@
           stirke ();
           ball();
         }
-          console.info(user.join('') + ' : ' + s + '스트라이크' + b + '볼');
+          console.info ( u.join('') + ' : ' + s + '스트라이크' + b + '볼');
       }
 
       if (s === 3) {
