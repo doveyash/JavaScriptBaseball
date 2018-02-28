@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Number Baseball Game</title>
+  </head>
+  <body>
+    <script>
+      //랜덤 숫자 생성
+      function compNumber(){
+        var comp = [];
+        var list = [0,1,2,3,4,5,6,7,8,9];
+        for (var i = 0; i < 3; i++){
+          var select = Math.floor(Math.random() * list.length);
+          comp[i] = list.splice(select, 1)[0];
+        }
+        return comp;
+      }
+       console.log(compNumber());
+
+
+      // stirke 계산
+      function strike(){
+        var strike = 0;
+        for (var j = 0; j < comp.length; j++){
+            if (comp[j] == user[j]){
+                strike++;
+              }
+            }
+          return strike;
+        }
+        console.log(strike());
+
+        // ball 계산
+        function ball(){
+          var ball = 0;
+          for (var k = 0; k < comp.length; k++){
+            for (var m = 0; m < user.length; m++){
+              if(comp[k] == user[m] && k != m){
+                ball++;
+              }
+            }
+          }
+          return ball;
+        }
+
+
+      compNumber();
+
+      var s = strike ();
+      var b = ball ();
+
+      while (s < 3 ){
+        console.log('숫자를 입력해주세요 ex)123');
+        var input = prompt('숫자를 입력해주세요 ex)123 ');
+        if(input.length > 3){
+          alert('3자리수를 초과 하였습니다. 3자리수 숫자를 입력해주세요. ex)123 ');
+          console.log('3자리수를 초과 하였습니다. 3자리수 숫자를 입력해주세요. ex)123');
+        }else {
+          var user = input.split('');
+          stirke ();
+          ball();
+        }
+          console.info(user.join('') + ' : ' + s + '스트라이크' + b + '볼');
+      }
+
+      if (strike === 3) {
+          console.log("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+      }
+
+          //console.info(user);
+    </script>
+  </body>
+</html>
