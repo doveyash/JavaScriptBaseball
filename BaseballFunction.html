@@ -16,11 +16,20 @@
         }
         return comp;
       }
-       console.log(compNumber());
+      // console.log(compNumber());
 
+      function userNumber(){
+        var input = prompt('숫자를 입력해주세요 ex)123 ');
+        var user = input.split('');
+        return user;
+      }
 
       // stirke 계산
       function strike(){
+        var comp = [];
+        var user = [];
+        comp[] = compNumber();
+        user[] = userNumber();
         var strike = 0;
         for (var j = 0; j < comp.length; j++){
             if (comp[j] == user[j]){
@@ -29,10 +38,14 @@
             }
           return strike;
         }
-        console.log(strike());
+
 
         // ball 계산
         function ball(){
+          var comp = [];
+          var user = [];
+          comp[] = compNumber();
+          user[] = userNumber();
           var ball = 0;
           for (var k = 0; k < comp.length; k++){
             for (var m = 0; m < user.length; m++){
@@ -52,12 +65,13 @@
 
       while (s < 3 ){
         console.log('숫자를 입력해주세요 ex)123');
-        var input = prompt('숫자를 입력해주세요 ex)123 ');
+          userNumber();
+        //var input = prompt('숫자를 입력해주세요 ex)123 ');
         if(input.length > 3){
           alert('3자리수를 초과 하였습니다. 3자리수 숫자를 입력해주세요. ex)123 ');
           console.log('3자리수를 초과 하였습니다. 3자리수 숫자를 입력해주세요. ex)123');
-        }else {
-          var user = input.split('');
+        }else{
+        //  var user = input.split('');
           stirke ();
           ball();
         }
